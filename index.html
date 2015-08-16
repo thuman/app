@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>借贷宝 – 人脉变钱脉</title>
+        <meta name="keywords" content="金融,社交,借款,借钱,赚钱,理财,投资,借贷,jiedaibao,股票,基金,p2p,众筹">
+        <meta name="description" content="借贷宝是国内顶级私募机构九鼎控股倾力打造的熟人间借贷平台。以借款人实名、出借人匿名的单向匿名借贷模式，使借款人能够快速获得借款，出借人根据借款人身份主动评估风险，获得更安全的高收益，是你手机上必备的借钱神器，赚钱利器。人脉变钱脉，就能玩出钱！">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <style type="text/css">         
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color:#fff;               
+        }
+        .content{
+            text-align:center;
+            margin-top:20%;
+        }
+        .content span{
+            cursor: pointer;
+            width:90%;
+            max-width:500px;
+            display:inline-block;
+            height:50px;
+            line-height:50px;
+            background:#3385ff;
+            border-radius:2px;
+            margin-top:30px;
+            color:#fff;
+            font-size:16px;
+
+        }
+        .content img{
+            width:35%;
+            margin-bottom:30px;
+            min-width:100px;
+            max-width:400px;
+        }
+        .content p{
+            font-size:14px;
+            line-height:18px;
+        }
+        </style>
+    </head>
+    <body>      
+        <div class="content">
+            <img src="./img/unionPay.png"/>
+            <p>您将进入银联页面进行银联卡关联，<br/>所填信息直接向中国银联提交，<br/>借贷宝不会获取。</p>
+            <span id='confirm'>确定进入</span>
+        </div>    
+    </body>    
+    <script type="text/javascript">
+    window.onload = function(){
+        var confirmBtn = document.getElementById('confirm');
+
+        function getQueryString(name) { 
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+            var r = window.location.search.substr(1).match(reg); 
+            if (r){
+                return unescape(r[2]);
+            } else {
+                return '';
+            }
+        }
+        confirmBtn.onclick = function () {
+            var paramStr = location.search;
+            var url = getQueryString('target');
+            //console.log(location.origin + '/unionPay/' + paramStr);
+            //location.href = location.origin + '/unionPay/' + paramStr;
+            url = 'https://www.baidu.com/';
+            location.href = url + paramStr;
+        }
+    }
+    </script>
+</html>
